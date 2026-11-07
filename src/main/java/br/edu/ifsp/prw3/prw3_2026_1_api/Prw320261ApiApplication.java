@@ -10,7 +10,7 @@ import org.springframework.data.web.config.EnableSpringDataWebSupport;
 public class Prw320261ApiApplication {
 
 	public static void main(String[] args) {
-		// Avaliação 3 - PRW3
+		// Avaliação 4 - PRW3
 		// Dupla:
 		//   Lucas Dalossa Lopes
 		//   Luiz Augusto de Oliveira Sellitto
