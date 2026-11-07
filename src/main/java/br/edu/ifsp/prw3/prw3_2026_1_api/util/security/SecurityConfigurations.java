@@ -29,6 +29,8 @@ public class SecurityConfigurations {
                 .authorizeHttpRequests(req -> {
                     // O usuário precisa conseguir fazer login antes de ter um token
                     req.requestMatchers("/login").permitAll();
+                    // Swagger liberado pra conseguir ver a API e pegar o token pelo /login
+                    req.requestMatchers("/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**").permitAll();
                     req.anyRequest().authenticated();
                 })
                 // Lê o JWT antes de o Spring decidir se libera o acesso

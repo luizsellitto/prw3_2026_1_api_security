@@ -6,6 +6,7 @@ import br.edu.ifsp.prw3.prw3_2026_1_api.conserto.DadosAtualizacaoConserto;
 import br.edu.ifsp.prw3.prw3_2026_1_api.conserto.DadosCadastroConserto;
 import br.edu.ifsp.prw3.prw3_2026_1_api.conserto.DadosDetalhamentoConserto;
 import br.edu.ifsp.prw3.prw3_2026_1_api.conserto.DadosListagemConserto;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
@@ -26,6 +27,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("consertos")
+@SecurityRequirement(name = "bearer-key")  // no Swagger, essas rotas mandam o token
 public class ConsertoController {
 
     // injeção de dependência pelo construtor (o Spring passa o repository pra gente)

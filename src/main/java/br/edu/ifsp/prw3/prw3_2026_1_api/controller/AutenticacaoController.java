@@ -32,9 +32,7 @@ public class AutenticacaoController {
         var authentication = manager.authenticate(dadosLogin);
 
         // Só chega aqui se o login e a senha estiverem corretos
-        Object principal = authentication.getPrincipal();
-        assert principal != null;
-        var tokenJWT = tokenService.gerarToken((Usuario) principal);
+        var tokenJWT = tokenService.gerarToken((Usuario) authentication.getPrincipal());
 
         return ResponseEntity.ok(new DadosTokenJWT(tokenJWT));
     }
